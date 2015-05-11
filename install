@@ -5,8 +5,8 @@ BASEDIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 # Install Vim
 # ===========
 
-cp ${BASEDIR}/vim/vimrc ~/.vimrc
-cp ${BASEDIR}/vim/gvimrc ~/.gvimrc
+ln -s ${BASEDIR}/vim/vimrc ~/.vimrc
+ln -s ${BASEDIR}/vim/gvimrc ~/.gvimrc
 mkdir ~/.vim
 
 # get Vundle
