@@ -1,0 +1,98 @@
+# MacPorts Installer addition on 2014-06-30_at_13:06:07: adding an appropriate PATH variable for use with MacPorts.
+export PATH="/opt/local/bin:/opt/local/sbin:$PATH"
+# Finished adapting your PATH environment variable for use with MacPorts.
+
+# Virtual environments
+export WORKON_HOME=~/workspace/envs
+export PROJECT_HOME=~/workspace
+source /usr/local/bin/virtualenvwrapper.sh
+
+# Git Autocompletion
+source ~/.git-completion.bash
+
+# Git Alises
+alias go='git checkout '
+
+# Setting PATH for Python 3.4
+# The orginal version is saved in .profile.pysave
+PATH="/Library/Frameworks/Python.framework/Versions/3.4/bin:${PATH}"
+export PATH
+
+# Show full directory on terminal
+export PS1='\u@\w$: '
+
+# Deploy
+alias deploy_statics='fab statics:environment=live -u paulo'
+alias deploy='fab deploy:environment=live -u paulo'
+
+# Databases
+alias mysqldev="mysql --defaults-group-suffix=dev"
+alias mysqlprod="mysql --defaults-group-suffix=prod"
+# Servers
+export dev="boris@172.17.72.7"
+export cats="paulo@cats.telegraaf.net"
+export celine="paulo@celine.telegraaf.net"
+export copyhaho="paulo@copyhaho.telegraaf.net"
+export customs="paulo@customs.telegraaf.net"
+export control="paulo@control.telegraaf.net"
+export cutcopy="paulo@cutcopy.telegraaf.net"
+export robota="paulo@1000robota.telegraaf.net"
+export oh3="paulo@3oh3.telegraaf.net"
+export strings="paulo@4strings.telegraaf.net"
+export daysofstatic="paulo@65daysofstatic.telegraaf.net"
+export horsepower="paulo@16horsepower.telegraaf.net"
+# Personal VPS
+export vps="107.170.138.166"
+
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
+
+# pssh
+alias pssh="pssh -h ~/.pssh.hosts -i --askpass"
+
+
+# use arrow keys with Ctrl-R search
+bind '"\e[A"':history-search-backward
+bind '"\e[B"':history-search-forward
+
+# kill all process by name
+function pkill { 
+    for i in `ps aux | grep $1 | grep -v grep | awk '{ print $2 }'`; do 
+        kill -kill $i;
+    done 
+}
+
+# shortcut for ps aux | grep <process-name>
+function pgrep { 
+    OIFS="${IFS}"
+    IFS=$'\n'
+    for i in `ps aux | grep $1 | grep -v grep | awk '{ print $0 }'`; do 
+        echo "$i";
+    done 
+    IFS="${OIFS}"
+}
+
+# Good PS1 example on Mac:
+# \[\033[COLOR_CODE_HERE\]PROMPT_ESCAPE_OR_TEXT_HERE\[\033[0m\]
+#export PS1="\[\033[1;32m\]\u@\w$: \[\033[0m\]"
+function color_my_prompt {
+    local __user_and_cur_location="\[\033[38;05;214m\]\u@\w"
+    local __git_branch='`git branch 2> /dev/null | grep -e ^* | sed -E  s/^\\\\\*\ \(.+\)$/\(\\\\\1\)\ /`'
+    local __git_stash='$([ ! `git stash list 2> /dev/null | wc -l` -eq '0' ] && echo "(stashed:"`git stash list 2> /dev/null | wc -l | tr -s " "`") ")'
+    local __git_branch_color="\[\033[35m\]"
+    local __prompt_tail_color="\[\033[38;05;214m\]"
+    local __prompt_tail="$: "
+    local __last_color="\[\033[00m\]"
+    export PS1="$__user_and_cur_location $__git_branch_color$__git_branch$__git_stash$__prompt_tail_color$__prompt_tail$__last_color"
+}
+color_my_prompt
+
+##
+# Your previous /Users/pbu/.profile file was backed up as /Users/pbu/.profile.macports-saved_2015-01-04_at_19:38:42
+##
+
+# MacPorts Installer addition on 2015-01-04_at_19:38:42: adding an appropriate PATH variable for use with MacPorts.
+export PATH="/opt/local/bin:/opt/local/sbin:$PATH"
+# Finished adapting your PATH environment variable for use with MacPorts.
+
+alias vim='/usr/local/bin/vim'

@@ -1,0 +1,77 @@
+" VUNDLE CONFIGURATION
+" ====================
+
+set nocompatible              " be iMproved, required
+filetype off                  " required
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+Plugin 'gmarik/Vundle.vim'
+Plugin 'tpope/vim-fugitive'
+Plugin 'mileszs/ack.vim'
+Plugin 'kien/ctrlp.vim'
+Plugin 'scrooloose/nerdtree'
+Plugin 'klen/python-mode'
+Plugin 'bling/vim-airline'
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'airblade/vim-gitgutter'
+
+call vundle#end()            " required
+filetype plugin indent on    " required
+" To ignore plugin indent changes, instead use:
+"filetype plugin on
+"
+" Brief help
+" :PluginList       - lists configured plugins
+" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
+" :PluginSearch foo - searches for foo; append `!` to refresh local cache
+" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
+"
+" see :h vundle for more details or wiki for FAQ
+" Put your non-Plugin stuff after this line
+"
+" END OF VUNDLE CONFIGURATION
+
+
+" MY OWN CONFIGURATION
+" ====================
+
+set ts=4
+set expandtab
+set shiftwidth=4
+set guifont=Monaco:h13 
+set enc=utf-8
+set nu
+set si
+set backspace=2
+set hid
+set tags=.\tags;\
+set foldmethod=syntax
+set nowrap
+set autoread
+
+map <C-Tab> :bn<Enter>
+map <C-b> :CtrlPBuffer<Enter>
+map <leader>n :NERDTreeToggle<CR>
+nmap <leader>a <Esc>:Ack!
+
+:syntax enable
+:filetype indent on
+
+syntax on
+
+" If you prefer the Omni-Completion tip window to close when a selection is
+" " made, these lines close it on movement in insert mode or when leaving
+" " insert mode
+autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
+autocmd InsertLeave * if pumvisible() == 0|pclose|endif
+
+" Otherwise in MacOSX git commit can fail:
+" https://github.com/bling/vim-airline/issues/79
+let g:airline_theme='dark'
+
+let g:solarized_termcolors = 256  "
+colorscheme solarized
+set background=dark
