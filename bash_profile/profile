@@ -1,11 +1,10 @@
-# MacPorts Installer addition on 2014-06-30_at_13:06:07: adding an appropriate PATH variable for use with MacPorts.
-export PATH="/opt/local/bin:/opt/local/sbin:$PATH"
-# Finished adapting your PATH environment variable for use with MacPorts.
+BASEDIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
-# Virtual environments
-export WORKON_HOME=~/workspace/envs
-export PROJECT_HOME=~/workspace
-source /usr/local/bin/virtualenvwrapper.sh
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
+
+# Git stuff:
+# ==========
 
 # Git Autocompletion
 source ~/.git-completion.bash
@@ -13,43 +12,18 @@ source ~/.git-completion.bash
 # Git Alises
 alias go='git checkout '
 
+
 # Setting PATH for Python 3.4
 # The orginal version is saved in .profile.pysave
 PATH="/Library/Frameworks/Python.framework/Versions/3.4/bin:${PATH}"
 export PATH
 
-# Show full directory on terminal
-export PS1='\u@\w$: '
-
-# Deploy
-alias deploy_statics='fab statics:environment=live -u paulo'
-alias deploy='fab deploy:environment=live -u paulo'
-
-# Databases
-alias mysqldev="mysql --defaults-group-suffix=dev"
-alias mysqlprod="mysql --defaults-group-suffix=prod"
-# Servers
-export dev="boris@172.17.72.7"
-export cats="paulo@cats.telegraaf.net"
-export celine="paulo@celine.telegraaf.net"
-export copyhaho="paulo@copyhaho.telegraaf.net"
-export customs="paulo@customs.telegraaf.net"
-export control="paulo@control.telegraaf.net"
-export cutcopy="paulo@cutcopy.telegraaf.net"
-export robota="paulo@1000robota.telegraaf.net"
-export oh3="paulo@3oh3.telegraaf.net"
-export strings="paulo@4strings.telegraaf.net"
-export daysofstatic="paulo@65daysofstatic.telegraaf.net"
-export horsepower="paulo@16horsepower.telegraaf.net"
-# Personal VPS
+# Personal VPS:
+# =============
 export vps="107.170.138.166"
 
-export LC_ALL=en_US.UTF-8
-export LANG=en_US.UTF-8
-
-# pssh
-alias pssh="pssh -h ~/.pssh.hosts -i --askpass"
-
+# Useful functions:
+# =================
 
 # use arrow keys with Ctrl-R search
 bind '"\e[A"':history-search-backward
@@ -72,9 +46,9 @@ function pgrep {
     IFS="${OIFS}"
 }
 
-# Good PS1 example on Mac:
-# \[\033[COLOR_CODE_HERE\]PROMPT_ESCAPE_OR_TEXT_HERE\[\033[0m\]
-#export PS1="\[\033[1;32m\]\u@\w$: \[\033[0m\]"
+# PS1 (prompt) Customization:
+# ===========================
+
 function color_my_prompt {
     local __user_and_cur_location="\[\033[38;05;214m\]\u@\w"
     local __git_branch='`git branch 2> /dev/null | grep -e ^* | sed -E  s/^\\\\\*\ \(.+\)$/\(\\\\\1\)\ /`'
@@ -87,12 +61,17 @@ function color_my_prompt {
 }
 color_my_prompt
 
-##
-# Your previous /Users/pbu/.profile file was backed up as /Users/pbu/.profile.macports-saved_2015-01-04_at_19:38:42
-##
-
-# MacPorts Installer addition on 2015-01-04_at_19:38:42: adding an appropriate PATH variable for use with MacPorts.
-export PATH="/opt/local/bin:/opt/local/sbin:$PATH"
-# Finished adapting your PATH environment variable for use with MacPorts.
-
 alias vim='/usr/local/bin/vim'
+
+# If exists dir, source custom files where work stuff can be put
+# or anything that's custom to some specific environment
+PROFILE_CUSTOM_SOURCE_DIR=${BASEDIR}'/.profile_custom_sources/'
+if [ -e $PROFILE_CUSTOM_SOURCE_DIR ]
+then
+    for f in `ls $PROFILE_CUSTOM_SOURCE_DIR`
+    do 
+        source $PROFILE_CUSTOM_SOURCE_DIR/$f
+    done
+else
+    mkdir $PROFILE_CUSTOM_SOURCE_DIR
+fi

@@ -2,6 +2,7 @@
 
 BASEDIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
+
 # Install Vim
 # ===========
 
@@ -14,6 +15,7 @@ git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 # install plugins
 vim +PluginInstall +qall
 
+
 # Install Git
 # ===========
 
@@ -24,3 +26,11 @@ vim +PluginInstall +qall
 
 # ack
 cp ${BASEDIR}/ackrc ~/.ackrc
+
+
+# Install Bash
+# ============
+
+ln -s ${BASEDIR}/bash_profile/profile ~/.profile
+PROFILE_CUSTOM_SOURCES='~/.profile_custom_sources'
+[ -e ${PROFILE_CUSTOM_SOURCES} ] && mkdir ${PROFILE_CUSTOM_SOURCES}
