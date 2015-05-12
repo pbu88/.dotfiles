@@ -47,15 +47,18 @@ set nu
 set si
 set backspace=2
 set hid
-set tags=.\tags;\
 set foldmethod=syntax
 set nowrap
 set autoread
+set laststatus=2
+set clipboard=unnamed
 
 map <C-Tab> :bn<Enter>
 map <C-b> :CtrlPBuffer<Enter>
 map <leader>n :NERDTreeToggle<CR>
 nmap <leader>a <Esc>:Ack!
+" Use ack to search for word under cursor
+map <leader>w "ayiw<Esc>:Ack!<C-r>a<cr>
 
 :syntax enable
 :filetype indent on
@@ -71,6 +74,7 @@ autocmd InsertLeave * if pumvisible() == 0|pclose|endif
 " Otherwise in MacOSX git commit can fail:
 " https://github.com/bling/vim-airline/issues/79
 let g:airline_theme='dark'
+let g:airline#extensions#branch#enabled=1
 
 let g:solarized_termcolors = 256  "
 colorscheme solarized
