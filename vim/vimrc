@@ -51,14 +51,14 @@ set foldmethod=syntax
 set nowrap
 set autoread
 set laststatus=2
-set clipboard=unnamed
+set showmatch
 
-map <C-Tab> :bn<Enter>
-map <C-b> :CtrlPBuffer<Enter>
-map <leader>n :NERDTreeToggle<CR>
-nmap <leader>a <Esc>:Ack!
+noremap <C-Tab> :bn<Enter>
+noremap <C-b> :CtrlPBuffer<Enter>
+noremap <leader>n :NERDTreeToggle<CR>
+nnoremap <leader>a <Esc>:Ack!
 " Use ack to search for word under cursor
-map <leader>w "ayiw<Esc>:Ack!<C-r>a<cr>
+noremap <leader>w "ayiw<Esc>:Ack!<C-r>a<cr>
 
 :syntax enable
 :filetype indent on
