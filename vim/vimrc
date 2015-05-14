@@ -17,6 +17,7 @@ Plugin 'klen/python-mode'
 Plugin 'bling/vim-airline'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'airblade/vim-gitgutter'
+Plugin 'msanders/snipmate.vim'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -52,6 +53,7 @@ set nowrap
 set autoread
 set laststatus=2
 set showmatch
+set nosmartindent " messes with python comments: (http://stackoverflow.com/questions/354097/how-to-configure-vim-to-not-put-comments-at-the-beginning-of-lines-while-editing)
 
 noremap <C-Tab> :bn<Enter>
 noremap <C-b> :CtrlPBuffer<Enter>
@@ -59,6 +61,14 @@ noremap <leader>n :NERDTreeToggle<CR>
 nnoremap <leader>a <Esc>:Ack!
 " Use ack to search for word under cursor
 noremap <leader>w "ayiw<Esc>:Ack!<C-r>a<cr>
+" Edit vimrc
+nnoremap <leader>ev :vsplit $MYVIMRC<cr>
+" Source vimrc
+nnoremap <leader>sv :source $MYVIMRC<cr>
+nmap <c-j> <c-w>j
+nmap <c-k> <c-w>k
+nmap <c-l> <c-w>l
+nmap <c-h> <c-w>h
 
 :syntax enable
 :filetype indent on
@@ -68,8 +78,16 @@ syntax on
 " If you prefer the Omni-Completion tip window to close when a selection is
 " " made, these lines close it on movement in insert mode or when leaving
 " " insert mode
-autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
-autocmd InsertLeave * if pumvisible() == 0|pclose|endif
+augroup omnicompletion
+    autocmd!
+    autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
+    autocmd InsertLeave * if pumvisible() == 0|pclose|endif
+augroup END 
+
+" Fugitive shortcuts
+nnoremap <leader>gb :Gblame<cr>
+nnoremap <leader>gd :Gdiff<cr>
+nnoremap <leader>gs :Gstatus<cr>
 
 " Otherwise in MacOSX git commit can fail:
 " https://github.com/bling/vim-airline/issues/79
@@ -79,3 +97,6 @@ let g:airline#extensions#branch#enabled=1
 let g:solarized_termcolors = 256  "
 colorscheme solarized
 set background=dark
+
+" Open go to definition in vertical split
+let g:pymode_rope_goto_definition_cmd='vnew'
