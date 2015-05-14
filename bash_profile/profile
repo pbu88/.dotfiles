@@ -11,6 +11,7 @@ source ~/.git-completion.bash
 
 # Git Alises
 alias go='git checkout '
+alias clojure='java -cp ~/clojure-1.6.0/clojure-1.6.0.jar clojure.main'
 
 
 # Setting PATH for Python 3.4

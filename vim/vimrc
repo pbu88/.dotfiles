@@ -65,10 +65,11 @@ noremap <leader>w "ayiw<Esc>:Ack!<C-r>a<cr>
 nnoremap <leader>ev :vsplit $MYVIMRC<cr>
 " Source vimrc
 nnoremap <leader>sv :source $MYVIMRC<cr>
-nmap <c-j> <c-w>j
-nmap <c-k> <c-w>k
-nmap <c-l> <c-w>l
-nmap <c-h> <c-w>h
+nmap <C-j> <C-w>j
+nmap <C-k> <C-w>k
+nmap <C-l> <C-w>l
+nmap <C-h> <C-w>h
+nnoremap <leader>6 <C-^>
 
 :syntax enable
 :filetype indent on
