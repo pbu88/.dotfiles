@@ -76,3 +76,6 @@ then
 else
     mkdir $PROFILE_CUSTOM_SOURCE_DIR
 fi
+
+# Source FZF useful functions:
+source ~/.fzf
