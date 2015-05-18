@@ -1,5 +1,3 @@
-BASEDIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
@@ -8,11 +6,6 @@ export LANG=en_US.UTF-8
 
 # Git Autocompletion
 source ~/.git-completion.bash
-
-# Git Alises
-alias go='git checkout '
-alias clojure='java -cp ~/clojure-1.6.0/clojure-1.6.0.jar clojure.main'
-
 
 # Setting PATH for Python 3.4
 # The orginal version is saved in .profile.pysave
@@ -62,11 +55,12 @@ function color_my_prompt {
 }
 color_my_prompt
 
-alias vim='/usr/local/bin/vim'
+# SOURCES
+# =======
 
 # If exists dir, source custom files where work stuff can be put
 # or anything that's custom to some specific environment
-PROFILE_CUSTOM_SOURCE_DIR=${BASEDIR}'/.profile_custom_sources/'
+PROFILE_CUSTOM_SOURCE_DIR="$HOME/.profile_custom_sources/"
 if [ -e $PROFILE_CUSTOM_SOURCE_DIR ]
 then
     for f in `ls $PROFILE_CUSTOM_SOURCE_DIR`
@@ -77,5 +71,5 @@ else
     mkdir $PROFILE_CUSTOM_SOURCE_DIR
 fi
 
-# Source FZF useful functions:
-source ~/.fzf
+source ~/.bash/fzf # fuzzy commands
+source ~/.bash/alias

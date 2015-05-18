@@ -30,8 +30,13 @@ cdf() {
 }
 
 # fh - repeat history
-fh() {
+_fh() {
     eval $( ([ -n "$ZSH_NAME" ] && fc -l 1 || history) | fzf +s --tac | sed 's/ *[0-9]* *//')
+}
+
+# fh - repeat history edit
+fh() {
+  print -z $( ([ -n "$ZSH_NAME" ] && fc -l 1 || history) | fzf +s --tac | sed 's/ *[0-9]* *//')
 }
 
 # fkill - kill process

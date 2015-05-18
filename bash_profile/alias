@@ -1,0 +1,9 @@
+# Aliases
+
+# Git convenient alias
+alias go='git checkout '
+alias st='git status'
+
+# Binaries
+alias vim='/usr/local/bin/vim'
+alias clojure='java -cp ~/clojure-1.6.0/clojure-1.6.0.jar clojure.main'

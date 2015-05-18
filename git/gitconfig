@@ -3,3 +3,10 @@
 	email = pbu_98@yahoo.com
 [push]
 	default = simple
+[alias]
+    logx = log --remotes --graph --branches --decorate=short --oneline --abbrev-commit
+    outgoing = "!git log origin/$(git rev-parse --abbrev-ref HEAD).."
+    incoming = "!git log ..origin/$(git rev-parse --abbrev-ref HEAD)"
+    co = checkout
+[core]
+	editor = /usr/local/bin/vim
