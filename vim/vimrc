@@ -55,6 +55,7 @@ set laststatus=2
 set showmatch
 set nosmartindent " messes with python comments: (http://stackoverflow.com/questions/354097/how-to-configure-vim-to-not-put-comments-at-the-beginning-of-lines-while-editing)
 set cursorline
+set scrolloff=999 " keep cursor centered when scrolling
 
 noremap <C-Tab> :bn<Enter>
 noremap <C-b> :CtrlPBuffer<Enter>
