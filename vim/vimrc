@@ -18,6 +18,7 @@ Plugin 'bling/vim-airline'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'msanders/snipmate.vim'
+Plugin 'moll/vim-bbye'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -72,6 +73,7 @@ nmap <C-k> <C-w>k
 nmap <C-l> <C-w>l
 nmap <C-h> <C-w>h
 nnoremap <leader>6 <C-^>
+nnoremap :bd :Bdelete
 
 :syntax enable
 :filetype indent on
