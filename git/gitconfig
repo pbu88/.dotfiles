@@ -8,5 +8,6 @@
     outgoing = "!git log origin/$(git rev-parse --abbrev-ref HEAD).."
     incoming = "!git log ..origin/$(git rev-parse --abbrev-ref HEAD)"
     co = checkout
+    st = status
 [core]
 	editor = /usr/local/bin/vim
