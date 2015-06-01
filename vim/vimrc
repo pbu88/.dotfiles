@@ -75,6 +75,8 @@ nmap <C-h> <C-w>h
 nnoremap <leader>6 <C-^>
 nnoremap :bd :Bdelete
 nnoremap ++ <C-w>\|<C-w>_
+nnoremap \|\| <C-w>\|
+nnoremap __ <C-w>_
 nnoremap == <C-w>=
 
 :syntax enable
