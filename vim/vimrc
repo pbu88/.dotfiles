@@ -78,6 +78,7 @@ nnoremap ++ <C-w>\|<C-w>_
 nnoremap \|\| <C-w>\|
 nnoremap __ <C-w>_
 nnoremap == <C-w>=
+nnoremap <leader>f :echo @%<CR>
 
 :syntax enable
 :filetype indent on

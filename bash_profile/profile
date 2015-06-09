@@ -73,3 +73,4 @@ fi
 
 source ~/.bash/fzf # fuzzy commands
 source ~/.bash/alias
+source ~/.bash/colors
