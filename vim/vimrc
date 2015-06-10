@@ -109,4 +109,19 @@ colorscheme solarized
 set background=dark
 
 " Open go to definition in vertical split
-let g:pymode_rope_goto_definition_cmd='vnew'
+let g:pymode_rope_goto_definition_cmd='Split'
+
+" Useful function to split or jump when using rope's go to definition
+function! JumpOrSplit( fname )
+    let bufnum=bufnr(expand(a:fname))
+    let winnum=bufwinnr(bufnum)
+    if winnum != -1
+        " Jump to existing split
+        exe winnum . "wincmd w"
+    else
+        " Make new split as usual
+        exe "vsp " . a:fname
+    endif
+endfunction
+
+command! -nargs=1 Split :call JumpOrSplit("<args>")
