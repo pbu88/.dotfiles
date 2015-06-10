@@ -1,0 +1,20 @@
+# Useful functions:
+# =================
+
+# kill all process by name
+function pkill { 
+    for i in `ps aux | grep $1 | grep -v grep | awk '{ print $2 }'`; do 
+        kill -kill $i;
+    done 
+}
+
+# shortcut for ps aux | grep <process-name>
+function pgrep { 
+    OIFS="${IFS}"
+    IFS=$'\n'
+    for i in `ps aux | grep $1 | grep -v grep | awk '{ print $0 }'`; do 
+        echo "$i";
+    done 
+    IFS="${OIFS}"
+}
+
