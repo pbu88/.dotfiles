@@ -19,6 +19,7 @@ Plugin 'altercation/vim-colors-solarized'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'msanders/snipmate.vim'
 Plugin 'moll/vim-bbye'
+Plugin 'notpratheek/vim-luna'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -105,8 +106,7 @@ let g:airline_theme='dark'
 let g:airline#extensions#branch#enabled=1
 
 let g:solarized_termcolors = 256  "
-colorscheme solarized
-set background=dark
+colorscheme luna-term
 
 " Open go to definition in vertical split
 let g:pymode_rope_goto_definition_cmd='Split'
