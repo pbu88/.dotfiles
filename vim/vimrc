@@ -58,6 +58,7 @@ set showmatch
 set nosmartindent " messes with python comments: (http://stackoverflow.com/questions/354097/how-to-configure-vim-to-not-put-comments-at-the-beginning-of-lines-while-editing)
 set cursorline
 set scrolloff=999 " keep cursor centered when scrolling
+set guioptions=aem
 
 noremap <C-Tab> :bn<Enter>
 noremap <C-b> :CtrlPBuffer<Enter>
@@ -68,7 +69,7 @@ noremap <leader>w "ayiw<Esc>:Ack!<C-r>a<cr>
 " Edit vimrc
 nnoremap <leader>ev :vsplit $MYVIMRC<cr>
 " Source vimrc
-nnoremap <leader>sv :source $MYVIMRC<cr>
+nnoremap <leader>sv :source $MYVIMRC<CR>:source $MYGVIMRC<CR>
 nmap <C-j> <C-w>j
 nmap <C-k> <C-w>k
 nmap <C-l> <C-w>l
@@ -80,6 +81,8 @@ nnoremap \|\| <C-w>\|
 nnoremap __ <C-w>_
 nnoremap == <C-w>=
 nnoremap <leader>f :echo @%<CR>
+nnoremap <Space><Space> :on<CR>
+nnoremap <leader>a :BAwk 
 
 :syntax enable
 :filetype indent on
@@ -125,3 +128,11 @@ function! JumpOrSplit( fname )
 endfunction
 
 command! -nargs=1 Split :call JumpOrSplit("<args>")
+
+function! BetterAwk(s)
+    exe "Ack!\"" . a:s . "\""
+endfunction
+
+command! -nargs=1 BAwk :call BetterAwk("<args>")
+
+let g:Tlist_Ctags_Cmd='/usr/local/bin/ctags'  " Proper ctags location
