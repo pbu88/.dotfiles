@@ -6,5 +6,5 @@ alias st='git status'
 
 # Binaries
 alias vim='/usr/local/bin/vim'
-alias clojure="java -cp $HOME/clojure-1.6.0/jline-0.9.94.jar:$HOME/clojure-1.6.0/clojure-1.6.0.jar jline.ConsoleRunner clojure.main"
+alias clojure="lein repl"
 alias ls='ls -Gp'
