@@ -32,6 +32,7 @@ cp ${BASEDIR}/ack/ackrc ~/.ackrc
 # ============
 
 ln -s ${BASEDIR}/bash_profile/profile ~/.profile
+ln -s ${BASEDIR}/bash_profile/zshrc ~/.zshrc # zsh stuff
 mkdir ~/.bash
 ln -s ${BASEDIR}/bash_profile/fzf ~/.bash/fzf
 ln -s ${BASEDIR}/bash_profile/alias ~/.bash/alias
