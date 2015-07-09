@@ -20,6 +20,9 @@ Plugin 'airblade/vim-gitgutter'
 Plugin 'msanders/snipmate.vim'
 Plugin 'moll/vim-bbye'
 Plugin 'notpratheek/vim-luna'
+Plugin 'davidhalter/jedi-vim'
+Plugin 'L9'
+Plugin 'FuzzyFinder'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -50,7 +53,7 @@ set nu
 set si
 set backspace=2
 set hid
-set foldmethod=syntax
+"set foldmethod=syntax
 set nowrap
 set autoread
 set laststatus=2
@@ -58,7 +61,7 @@ set showmatch
 set nosmartindent " messes with python comments: (http://stackoverflow.com/questions/354097/how-to-configure-vim-to-not-put-comments-at-the-beginning-of-lines-while-editing)
 set cursorline
 set scrolloff=999 " keep cursor centered when scrolling
-set guioptions=aem
+set guioptions=ac
 
 noremap <C-Tab> :bn<Enter>
 noremap <C-b> :CtrlPBuffer<Enter>
@@ -83,6 +86,9 @@ nnoremap == <C-w>=
 nnoremap <leader>f :echo @%<CR>
 nnoremap <Space><Space> :on<CR>
 nnoremap <leader>a :BAwk 
+nnoremap p p=`]
+nnoremap P P=`]
+nnoremap <leader>ft :FufTag<CR>
 
 :syntax enable
 :filetype indent on
@@ -112,7 +118,11 @@ let g:solarized_termcolors = 256  "
 colorscheme luna-term
 
 " Open go to definition in vertical split
-let g:pymode_rope_goto_definition_cmd='Split'
+"let g:pymode_rope_goto_definition_cmd='Split'
+" Use python-mode mainly for syntax and folding (which is very good)
+" Disable for rope and lint
+let g:pymode_rope = 0
+let g:pymode_lint = 0
 
 " Useful function to split or jump when using rope's go to definition
 function! JumpOrSplit( fname )
@@ -135,4 +145,5 @@ endfunction
 
 command! -nargs=1 BAwk :call BetterAwk("<args>")
 
-let g:Tlist_Ctags_Cmd='/usr/local/bin/ctags'  " Proper ctags location
+let g:jedi#call_signatures_command=''
+let g:jedi#usages_command=''
