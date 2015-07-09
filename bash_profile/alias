@@ -5,6 +5,6 @@ alias go='git checkout '
 alias st='git status'
 
 # Binaries
-alias vim='/usr/local/bin/vim'
+alias vim='mvim -v'
 alias clojure="lein repl"
 alias ls='ls -Gp'

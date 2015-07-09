@@ -19,10 +19,10 @@ vim +PluginInstall +qall
 # Install Git
 # ===========
 
-#ln -s ${BASEDIR}/.gitconfig ~/.gitconfig
-#echo "Downloading git completion bash..."
-#wget https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash
-#ln -s ${BASEDIR}/git-completion.bash ~/.git-completion.bash
+echo $BASEDIR
+ln -s ${BASEDIR}/git/gitconfig ~/.gitconfig
+echo "Downloading git completion bash..."
+curl https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash > ~/.git-completion.bash
 
 # ack
 cp ${BASEDIR}/ack/ackrc ~/.ackrc
