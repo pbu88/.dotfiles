@@ -20,6 +20,7 @@ Plugin 'airblade/vim-gitgutter'
 Plugin 'msanders/snipmate.vim'
 Plugin 'moll/vim-bbye'
 Plugin 'notpratheek/vim-luna'
+Plugin 'surround.vim'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
