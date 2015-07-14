@@ -21,6 +21,7 @@ vim +PluginInstall +qall
 
 echo $BASEDIR
 ln -s ${BASEDIR}/git/gitconfig ~/.gitconfig
+ln -s ${BASEDIR}/git/git_excludes ~/.git_excludes
 echo "Downloading git completion bash..."
 curl https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash > ~/.git-completion.bash
 

@@ -11,3 +11,4 @@
     st = status
 [core]
 	editor = /usr/local/bin/vim
+    excludesfile = ~/.git_excludes
