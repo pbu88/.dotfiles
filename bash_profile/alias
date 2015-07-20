@@ -1,4 +1,6 @@
 # Aliases
+# alias info to stderr is very annoying, redirecto to stdout
+alias alias='alias 2>1'
 
 # Git convenient alias
 alias go='git checkout '
@@ -8,3 +10,13 @@ alias st='git status'
 alias vim='mvim -v'
 alias clojure="lein repl"
 alias ls='ls -Gp'
+
+
+# Handy aliases for Mac only
+# press and hold for mac show characters
+alias apple_press_and_hold_false='defaults write -g ApplePressAndHoldEnabled -bool false'
+alias apple_press_and_hold_true='defaults write -g ApplePressAndHoldEnabled -bool true'
+
+# Source zsh
+alias source_zshrc='source ~/.zshrc'
+alias edit_zshrc='vim ~/.zshrc'
