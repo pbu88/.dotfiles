@@ -10,5 +10,5 @@
     co = checkout
     st = status
 [core]
-	editor = /usr/local/bin/vim
+	editor = mvim -v
     excludesfile = ~/.git_excludes
