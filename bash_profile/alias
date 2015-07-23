@@ -1,6 +1,6 @@
 # Aliases
 # alias info to stderr is very annoying, redirecto to stdout
-alias alias='alias 2>1'
+alias alias='alias 2>&1'
 
 # Git convenient alias
 alias go='git checkout '
