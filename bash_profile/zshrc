@@ -2,7 +2,9 @@
 autoload -U compinit
 compinit
 
-zstyle ':completion:*' menu select
+PATH="${PATH}:/usr/local/sbin"
+export PATH
+
 setopt completealiases
 
 ## Load prompt
