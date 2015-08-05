@@ -7,11 +7,6 @@ export LANG=en_US.UTF-8
 # Git Autocompletion
 source ~/.git-completion.bash
 
-# Setting PATH for Python 3.4
-# The orginal version is saved in .profile.pysave
-PATH="/Library/Frameworks/Python.framework/Versions/3.4/bin:${PATH}"
-export PATH
-
 # Personal VPS:
 # =============
 export vps="107.170.138.166"
@@ -55,3 +50,4 @@ source ~/.bash/fzf # fuzzy commands
 source ~/.bash/alias
 source ~/.bash/colors
 source ~/.bash/functions
+source ~/.bash/path

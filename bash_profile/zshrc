@@ -2,9 +2,6 @@
 autoload -U compinit
 compinit
 
-PATH="${PATH}:/usr/local/sbin"
-export PATH
-
 setopt completealiases
 
 ## Load prompt
@@ -85,6 +82,8 @@ fi
 source ~/.bash/fzf # fuzzy commands
 source ~/.bash/alias
 source ~/.bash/functions
+source ~/.bash/path
+source ~/.bash/colors
 
 ## History
 HISTFILE=$HOME/.zhistory       # enable history saving on shell exit
@@ -100,6 +99,3 @@ setopt HIST_IGNORE_DUPS        # Exclude duplicates from history
 cd $HOME
 export vps="107.170.138.166"
 
-# Color ls command by default
-export CLICOLOR=1
-export LSCOLORS=GxcxhxDxexhxhxhxhxcxcx

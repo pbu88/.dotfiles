@@ -39,5 +39,6 @@ ln -s ${BASEDIR}/bash_profile/fzf ~/.bash/fzf
 ln -s ${BASEDIR}/bash_profile/alias ~/.bash/alias
 ln -s ${BASEDIR}/bash_profile/functions ~/.bash/functions
 ln -s ${BASEDIR}/bash_profile/colors ~/.bash/colors
+ln -s ${BASEDIR}/bash_profile/path ~/.bash/path
 PROFILE_CUSTOM_SOURCES='~/.profile_custom_sources'
 [ -e ${PROFILE_CUSTOM_SOURCES} ] && mkdir ${PROFILE_CUSTOM_SOURCES}
