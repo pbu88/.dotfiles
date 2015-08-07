@@ -20,3 +20,6 @@ alias apple_press_and_hold_true='defaults write -g ApplePressAndHoldEnabled -boo
 # Source zsh
 alias source_zshrc='source ~/.zshrc'
 alias edit_zshrc='vim ~/.zshrc'
+
+# JSON tools
+alias ppj='python -m json.tool'
