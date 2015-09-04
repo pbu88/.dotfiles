@@ -18,7 +18,7 @@ alias apple_press_and_hold_false='defaults write -g ApplePressAndHoldEnabled -bo
 alias apple_press_and_hold_true='defaults write -g ApplePressAndHoldEnabled -bool true'
 
 # Source zsh
-alias source_zshrc='source ~/.zshrc'
+alias source_zshrc='source ~/.zshrc;cd -'
 alias edit_zshrc='vim ~/.zshrc'
 
 # JSON tools
