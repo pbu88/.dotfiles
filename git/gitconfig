@@ -9,6 +9,7 @@
     incoming = "!git log --oneline ..origin/$(git rev-parse --abbrev-ref HEAD)"
     co = checkout
     st = status
+    diffc = diff --cached
 [core]
 	editor = mvim -v
     excludesfile = ~/.git_excludes
