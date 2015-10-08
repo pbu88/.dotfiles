@@ -10,6 +10,7 @@
     co = checkout
     st = status
     diffc = diff --cached
+    fetcha = fetch --all
 [core]
 	editor = mvim -v
     excludesfile = ~/.git_excludes
