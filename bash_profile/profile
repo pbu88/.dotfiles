@@ -51,3 +51,4 @@ source ~/.bash/alias
 source ~/.bash/colors
 source ~/.bash/functions
 source ~/.bash/path
+source ~/.bash/workon

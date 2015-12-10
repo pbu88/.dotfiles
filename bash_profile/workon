@@ -1,0 +1,9 @@
+function workon {
+    cd $WORKON_HOME/$1;
+}
+
+function _workon_completion {
+    local cur=${COMP_WORDS[COMP_CWORD]}
+    COMPREPLY=( $(compgen -W "`/bin/ls $WORKON_HOME`" -- $cur) )
+}
+complete -F _workon_completion workon

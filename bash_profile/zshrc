@@ -84,6 +84,7 @@ source ~/.bash/alias
 source ~/.bash/functions
 source ~/.bash/path
 source ~/.bash/colors
+source ~/.bash/workon
 
 ## History
 HISTFILE=$HOME/.zhistory       # enable history saving on shell exit
