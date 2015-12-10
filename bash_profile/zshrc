@@ -98,5 +98,4 @@ setopt share_history
 setopt HIST_IGNORE_DUPS        # Exclude duplicates from history
 
 cd $HOME
-export vps="107.170.138.166"
 
