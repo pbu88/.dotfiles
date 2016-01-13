@@ -2,4 +2,6 @@
 
 .vimrc
 *.swp
+*.swn
+*.swo
 .tags
