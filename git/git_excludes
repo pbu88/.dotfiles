@@ -5,3 +5,4 @@
 *.swn
 *.swo
 .tags
+.DS_Store
