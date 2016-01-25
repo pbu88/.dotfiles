@@ -1,8 +1,8 @@
 [user]
-	name = Paulo Bu
-	email = pbu_98@yahoo.com
+    name = Paulo Bu
+    email = pbu_98@yahoo.com
 [push]
-	default = simple
+    default = simple
 [alias]
     logx = log --remotes --graph --branches --format='%C(auto)%h%d%Creset %s %Cgreen(%ar) %Cblue<%an>%Creset'
     outgoing = "!git log --oneline origin/$(git rev-parse --abbrev-ref HEAD).."
@@ -12,5 +12,5 @@
     diffc = diff --cached
     fetcha = fetch --all
 [core]
-	editor = mvim -v
+    editor = mvim -v
     excludesfile = ~/.git_excludes
