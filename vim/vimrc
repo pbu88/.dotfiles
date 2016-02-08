@@ -21,6 +21,10 @@ Plugin 'msanders/snipmate.vim'
 Plugin 'moll/vim-bbye'
 Plugin 'notpratheek/vim-luna'
 Plugin 'surround.vim'
+Plugin 'L9'
+Plugin 'FuzzyFinder'
+Plugin 'pangloss/vim-javascript'
+Plugin 'wookiehangover/jshint.vim'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
