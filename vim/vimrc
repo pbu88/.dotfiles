@@ -21,10 +21,15 @@ Plugin 'msanders/snipmate.vim'
 Plugin 'moll/vim-bbye'
 Plugin 'notpratheek/vim-luna'
 Plugin 'surround.vim'
+Plugin 'davidhalter/jedi-vim'
 Plugin 'L9'
 Plugin 'FuzzyFinder'
 Plugin 'pangloss/vim-javascript'
-Plugin 'wookiehangover/jshint.vim'
+Plugin 'scrooloose/syntastic'
+Plugin 'leafgarland/typescript-vim'
+Plugin 'Quramy/tsuquyomi'
+Plugin 'Shougo/vimproc.vim'
+Plugin 'geekjuice/vim-mocha'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -49,7 +54,7 @@ filetype plugin indent on    " required
 set ts=4
 set expandtab
 set shiftwidth=4
-set guifont=Monaco:h13 
+set guifont=Monaco:h15
 set enc=utf-8
 set nu
 set si
@@ -63,7 +68,10 @@ set showmatch
 set nosmartindent " messes with python comments: (http://stackoverflow.com/questions/354097/how-to-configure-vim-to-not-put-comments-at-the-beginning-of-lines-while-editing)
 set cursorline
 set scrolloff=999 " keep cursor centered when scrolling
-set guioptions=aem
+set guioptions=ac
+set exrc
+set secure
+set tags=.tags/tags
 
 noremap <C-Tab> :bn<Enter>
 noremap <C-b> :CtrlPBuffer<Enter>
@@ -88,6 +96,8 @@ nnoremap == <C-w>=
 nnoremap <leader>f :echo @%<CR>
 nnoremap <Space><Space> :on<CR>
 nnoremap <leader>a :BAwk 
+nnoremap <leader>ft :FufTag!<CR>
+nnoremap cC c/\u<CR>
 
 :syntax enable
 :filetype indent on
@@ -117,7 +127,11 @@ let g:solarized_termcolors = 256  "
 colorscheme luna-term
 
 " Open go to definition in vertical split
-let g:pymode_rope_goto_definition_cmd='Split'
+"let g:pymode_rope_goto_definition_cmd='Split'
+" Use python-mode mainly for syntax and folding (which is very good)
+" Disable for rope and lint
+let g:pymode_rope = 0
+let g:pymode_lint = 0
 
 " Useful function to split or jump when using rope's go to definition
 function! JumpOrSplit( fname )
@@ -140,4 +154,17 @@ endfunction
 
 command! -nargs=1 BAwk :call BetterAwk("<args>")
 
-let g:Tlist_Ctags_Cmd='/usr/local/bin/ctags'  " Proper ctags location
+let g:jedi#call_signatures_command=''
+let g:jedi#usages_command=''
+
+" PHP folding
+" ===========
+let php_folding = 1        "Set PHP folding of classes and functions.
+let php_htmlInStrings = 1  "Syntax highlight HTML code inside PHP strings.
+let php_sql_query = 1      "Syntax highlight SQL code inside PHP strings.
+let php_noShortTags = 1    "Disable PHP short tags.
+
+" Syntastic settings
+" ==================
+let g:syntastic_typescript_checkers = ['tslint']
+

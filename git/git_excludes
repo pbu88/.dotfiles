@@ -1,8 +1,12 @@
 # vim related:
 
 .vimrc
+.gvimrc
 *.swp
 *.swn
 *.swo
 .tags
 .DS_Store
+.idea
+.ackrc
+.swaps
