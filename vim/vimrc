@@ -30,6 +30,7 @@ Plugin 'leafgarland/typescript-vim'
 Plugin 'Quramy/tsuquyomi'
 Plugin 'Shougo/vimproc.vim'
 Plugin 'geekjuice/vim-mocha'
+Plugin 'joonty/vdebug'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -72,6 +73,8 @@ set guioptions=ac
 set exrc
 set secure
 set tags=.tags/tags
+set list
+set listchars=trail:…,tab:>-
 
 noremap <C-Tab> :bn<Enter>
 noremap <C-b> :CtrlPBuffer<Enter>
