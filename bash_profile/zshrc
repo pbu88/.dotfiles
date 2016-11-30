@@ -29,7 +29,7 @@ function color_my_prompt {
     local __prompt_tail_color="%{$fg[yellow]%}"
     local __prompt_tail="%#: "
     local __last_color="%{$reset_color%}"
-    export PROMPT="$__draw_line(php: `php --version | head -n 1 | awk '{print $2}'`) %{$fg[cyan]%}%(1V.(venv: %1v) .)$__user_and_cur_location $__git_branch_color$__git_branch$__git_stash$__prompt_tail_color$__prompt_tail$__last_color"
+    export PROMPT="$__draw_line%{$fg[cyan]%}%(1V.(venv: %1v) .)$__user_and_cur_location $__git_branch_color$__git_branch$__git_stash$__prompt_tail_color$__prompt_tail$__last_color"
 }
 color_my_prompt
 
