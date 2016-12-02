@@ -75,6 +75,7 @@ set secure
 set tags=.tags/tags
 set list
 set listchars=trail:…,tab:>-
+set colorcolumn=100
 
 noremap <C-Tab> :bn<Enter>
 noremap <C-b> :CtrlPBuffer<Enter>
