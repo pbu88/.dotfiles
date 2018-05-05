@@ -13,7 +13,7 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'mileszs/ack.vim'
 Plugin 'kien/ctrlp.vim'
 Plugin 'scrooloose/nerdtree'
-Plugin 'bling/vim-airline'
+"Plugin 'bling/vim-airline'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'moll/vim-bbye'
@@ -22,7 +22,6 @@ Plugin 'davidhalter/jedi-vim'
 Plugin 'L9'
 Plugin 'FuzzyFinder'
 Plugin 'pangloss/vim-javascript'
-Plugin 'scrooloose/syntastic'
 Plugin 'leafgarland/typescript-vim'
 Plugin 'Quramy/tsuquyomi'
 Plugin 'Shougo/vimproc.vim'
@@ -73,6 +72,7 @@ set tags=.tags/tags
 set list
 set listchars=trail:…,tab:\|-
 set colorcolumn=100
+set statusline=%<%f\ (%{&ft})\ %-4(%m%)%=%-19(%3l,%02c%03V%)
 
 noremap <C-Tab> :bn<Enter>
 noremap <C-b> :CtrlPBuffer<Enter>
