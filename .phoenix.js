@@ -44,7 +44,14 @@ function frameContainsPoint(frame, point) {
         point.y < frame.y + frame.height;
 }
 
+// Subscribe to mouse move.
+// The times are small optimizations to not fire
+// a focus everytime, thus saving energy
+var lastms = new Date().getTime();
 Event.on("mouseDidMove", point => {
+    var ms = new Date().getTime();
+    if (ms - lastms < 100) { return false; }
+    lastms = ms;
     Window.recent().find(w => {
         if(frameContainsPoint(w.frame(), point)) {
             w.focus();
