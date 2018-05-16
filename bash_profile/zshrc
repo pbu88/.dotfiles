@@ -110,6 +110,3 @@ cd $HOME
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 export ACKRC=".ackrc"
-$(dinghy shellinit)
-
-source ~/perl5/perlbrew/etc/bashrc
