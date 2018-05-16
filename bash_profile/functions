@@ -25,3 +25,14 @@ function ff {
 function tstodate {
     python -c "import datetime;print datetime.datetime.fromtimestamp($1).strftime('%Y-%m-%d %H:%M:%S')"
 }
+
+ssh() {
+    # show fancy ssh hostname on tmux window titles
+    if [ "$(ps -p $(ps -p $$ -o ppid=) -o comm=)" = "tmux" ]; then
+        tmux rename-window "$(echo $* | cut -d . -f 1)"
+        command ssh "$@"
+        tmux set-window-option automatic-rename "on" 1>/dev/null
+    else
+        command ssh "$@"
+    fi
+}
