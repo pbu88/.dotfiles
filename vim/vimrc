@@ -121,7 +121,7 @@ let g:airline_theme='dark'
 let g:airline#extensions#branch#enabled=1
 
 let g:solarized_termcolors = 256  "
-colorscheme luna-term
+colorscheme luna
 
 " Open go to definition in vertical split
 "let g:pymode_rope_goto_definition_cmd='Split'

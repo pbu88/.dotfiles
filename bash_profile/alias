@@ -5,6 +5,7 @@ alias alias='alias 2>&1'
 # Git convenient alias
 alias go='git checkout '
 alias st='git status'
+alias gpr='git pull --rebase'
 
 # Binaries
 alias vim='mvim -v'
