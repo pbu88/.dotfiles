@@ -9,8 +9,10 @@ alias gpr='git pull --rebase'
 
 # Binaries
 alias vim='mvim -v'
+alias vim.noplug='vim -u NONE'
 alias clojure="lein repl"
 alias ls='ls -Gp'
+alias fc='fc -e vim.noplug'
 
 
 # Handy aliases for Mac only
